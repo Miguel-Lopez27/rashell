@@ -6,18 +6,6 @@ from PIL import Image
 st.set_page_config(page_title="Funcionamiento", page_icon="📈")
 st.sidebar.header('Barra de navegación')
 
-st.header('Estrategia')
-st.markdown('Las mallas atrapaniebla son un sistema de tejido plastificado elaborado a partir de polipropileno principalmente. Esta malla tiene la particular propiedad de retener el agua presente en el ambiente a partir de la humedad, niebla, nubes o fuertes vientos. El agua es retenida en forma de gotas muy diminutas que se irán fusionando entre sí para formar gotas mucho más grandes, que después se juntarán para formar un cúmulo de agua. En base a reportes este tipo de mallas pueden llegar a captar agua desde un 20$%$ de humedad relativa como valor mínimo y producir 24 L por m2 de malla.\n')
-
-st.markdown('El principal objetivo es abastecer de suficiente área de esta malla en la zona montañosa que rodea a la Presa la Boca ubicada en Monterrey Nuevo León.')
-
-col0, col0 = st.columns(2)
-with col0:
-    st.header('Datos recolectados')
-    st.markdown('Las mallas atrapaniebla')
-with col0:
-    image0 = Image.open('img/recorrido_drone.jpeg')
-    st.image(image=image0)
 
 
 
@@ -26,17 +14,43 @@ st.markdown('El agua suspendida en el aire tiene un tamaño de gota extremadamen
 image = Image.open('img/Diagrama_malla.jpeg')
 st.image(image=image)
 
+st.header('Estrategia')
+st.markdown('Las mallas atrapaniebla son un sistema de tejido plastificado elaborado a partir de polipropileno principalmente. Esta malla tiene la particular propiedad de retener el agua presente en el ambiente a partir de la humedad, niebla, nubes o fuertes vientos. El agua es retenida en forma de gotas muy diminutas que se irán fusionando entre sí para formar gotas mucho más grandes, que después se juntarán para formar un cúmulo de agua. En base a reportes este tipo de mallas pueden llegar a captar agua desde un 20$%$ de humedad relativa como valor mínimo y producir 24 L por m2 de malla.\n')
+
+st.markdown('El principal objetivo es abastecer de suficiente área de esta malla en la zona montañosa que rodea a la Presa la Boca ubicada en Monterrey Nuevo León.')
+
+
+st.header('Datos recolectados')
+st.markdown('Las mallas atrapaniebla, considerrando la basta humedad ocn la que cuenta la zona de monterrey podemos hacer enfasis en la utilización de nuestro monitoreo siendo factible para la población')
+
+image0 = Image.open('img/funcion.jpeg')
+st.image(image=image0)
+
+
 st.header('Monitoreo de datos')
 
 st.markdown('Monitoreo de datos de caudal del agua, temperatura, humedad y calidad del aire en el ambiente, ')
+image01 = Image.open('img/grafica1.jpeg')
+st.image(image=image01)
 
-col01, col02 = st.columns(2)
-with col01:
-    st.header('Datos recolectados')
-    st.markdown('La malla proove')
-with col02:
-    images = Image.open('img/malla.jpeg')
-    st.image(image=images)
+image02= Image.open('img/grafica2.jpeg')
+st.image(image=image02)
+
+image03 = Image.open('img/grafica3.jpeg')
+st.image(image=image03)
+
+
+
+st.header('Normatividad')
+
+st.markdown('El control de calidad será evaluada conforme a lo establecido en las siguientes normas:')
+st.markdown('NOM-127-SSA1-2021. Agua para uso y consumo humano. Límites permisibles de la calidad del agua')
+st.markdown('NOM-02-SSA1-1993. Requisitos sanitarios que deben cumplir los sistemas de abastecimiento de agua para uso y consumo humano públicos y privados.')
+st.markdown('NOM-013-SSA1-1993, Requisitos sanitarios que debe cumplir la cisterna de un vehículo para el transporte y distribución de agua para uso y consumo humano.')
+st.markdown('NOM-014-SSA1-1993, Procedimientos sanitarios para el muestreo de agua para uso y consumo humano en sistemas de abastecimiento de agua públicos y privados.')
+st.markdown('NOM-179-SSA1-1998, Vigilancia y evaluación del control de calidad del agua para uso y consumo humano, distribuida por sistemas de abastecimiento público.')
+images = Image.open('img/malla.jpeg')
+st.image(image=images)
 
 st.header('')
 st.markdown('')
@@ -64,18 +78,3 @@ chart_data = pd.DataFrame(
     columns=['Temperatura', 'Humedad'])
 
 st.area_chart(chart_data)
-
-st.header('Modelado 3D')
-st.markdown('De acuerdo al recorrido del drone y recolección de imagenes, se creara un modelado 3D para la infromación general de la mina y la capacitación de mineros')
-age3 = Image.open('img/rocio.jpeg')
-st.image(image=age3)
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.header('Nube de puntos')
-    st.markdown('Se pleanea hacer un recorrido con una nube de puntos para tener un mejor reconocimiento de gritas y profunidad de la mina')
-
-with col2:
-    age4 = Image.open('img/funcion.jpeg')
-    st.image(image=age4)

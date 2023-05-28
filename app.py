@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import firestoreCrud as fsCRUD
 import pip
+import streamlit.components.v1 as components
 
 pip.main(["install","openpyxl"])
 # LLamado de datos para firebase
@@ -22,21 +23,14 @@ st.markdown('Monterrey ocupa el segundo lugar de la ciudad más grande de Méxic
 
 #st.header('Rehidratando Monterrey')
 #st.markdown('La cantidad de agua dispersa o contenida en el aire, lo que se expresa como humedad relativa, ha sido considerada y estudiada como una fuente prometedora para la obtención de agua, con el objetivo de reabastecer o hacer llegar agua a zonas que no tienen acceso a ella. Siendo así una estrategia para resolver dicho problema.')
-
+st.header("Historial de temperatura y humedad")
 st.write(docs)
 #Seleccionar una linea de tuberia
 
-col1, col2 = st.columns(2)
-
-with col1:
-   st.header("Historial y sensores")
-   #option = st.selectbox('Selecciona un sector: ', [e.to_dict()["nom_mina"] for e in docs])
-   #st.dataframe([e.to_dict() for e in docs], use_container_width=True)
-
-with col2:
-   st.header("Historial de temperatura y humedad")
-   #chart_data = pd.DataFrame(np.random.randn(20, 2),columns=['Temperatura', 'humedad',])
-   #st.line_chart(chart_data)
-
-st.header('')
+st.header("Posicionamiento de sensores y ubicacion")
+#omponents.iframe("img/mapa.html")
+HtmlFile = open("img/mapa.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height=600)
 
